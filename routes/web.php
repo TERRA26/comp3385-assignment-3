@@ -27,3 +27,5 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/login', [AuthController::class, 'create'])->name('login');
 Route::post('/login', [AuthController::class, 'store']);
+Route::post('/logout', [AuthController::class, 'logout']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
