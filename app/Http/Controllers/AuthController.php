@@ -8,18 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    /**
-     * @return \Illuminate\View\View
-     */
     public function create()
     {
         return view('auth.login');
     }
 
-    /**
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function store(Request $request)
     {
         $credentials = $request->validate([
@@ -39,10 +32,6 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function logout(Request $request)
     {
         Auth::logout();
